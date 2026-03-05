@@ -4,20 +4,30 @@ Guidelines for agentic coding agents operating in this repository.
 
 ## Project Overview
 
-**Incubateur d'Idées** is a markdown-based idea maturation system where concepts evolve over time through guided reflection. This is not a code repository—it's a living collection of ideas using a structured directory-based format.
+**Incubateur d'Idées** is a markdown-based idea maturation system where concepts evolve over time through guided reflection. This is NOT a code repository—it's a living collection of ideas in a structured directory-based format. The system itself (MATURATION) is the meta-project that manages all other ideas.
 
 ### File Structure
-- **Root**: `AGENTS.md`, `README.md`, `idea-index.md`
-- **Each idea**: `[code-lowercase]/idea.md` + `[code-lowercase]/history.md`
+- **Root**: `AGENTS.md`, `README.md`, `idea-index.md`, `.git/`
+- **Idea directories**: `[code-lowercase]/idea.md` + `[code-lowercase]/history.md`
 - **Example**: `app-mobile-grid/idea.md` (current state) + `app-mobile-grid/history.md` (timestamped evolution)
+- **Config**: `.github/copilot-instructions.md` (empty, can be updated)
 
 ## Build/Lint/Test Commands
 
-This is a markdown-based system with no traditional build, lint, or test commands. There is **no code to run**—only idea documents to read, analyze, and improve.
+**No traditional build, lint, or test commands exist.** This is a markdown-only system with no code execution.
 
+**All work is file-based**:
 ```bash
-# No build, test, or lint commands available
-# All work is file-based: reading and editing markdown
+# Read ideas
+cat [code-lowercase]/idea.md
+cat [code-lowercase]/history.md
+
+# Git operations
+git add .
+git commit -m "message"
+git push origin main
+
+# No build, test, or linting needed
 ```
 
 ## Code Style Guidelines
@@ -26,8 +36,9 @@ This is a markdown-based system with no traditional build, lint, or test command
 - Ideas: `[code-lowercase]/idea.md` (e.g., `app-mobile-grid/idea.md`)
 - History: `[code-lowercase]/history.md` (timestamped evolution log)
 - Index: `idea-index.md` (always singular, links to all ideas)
+- Idea codes: Uppercase with hyphens (APP-MOBILE-GRID), converted to lowercase for directory names
 
-### Content Structure
+### Content Structure (Mandatory Sections)
 ```markdown
 # idea-[CODE]
 
@@ -49,26 +60,27 @@ This is a markdown-based system with no traditional build, lint, or test command
 [Links to other ideas: [CODE], [CODE2]]
 ```
 
-### Markdown Formatting
-- Use French headers and content
-- Always include metadata section (dates, status, tags)
-- Keep descriptions concise and focused
-- Use backticks for code references or technical terms
-- Link to other ideas using `[CODE]` format (e.g., `[APP-MOBILE-GRID]`)
-- Preserve section order: Description → Potentiel → Questions ouvertes → Connexions
+### Markdown Formatting Standards
+- **Language**: French headers and content throughout
+- **Metadata**: Always include dates, status, tags (required)
+- **Sections**: Preserve order: Description → Potentiel → Questions ouvertes → Connexions
+- **Code references**: Use backticks (e.g., `[CODE-NAME]` for idea references)
+- **Links**: Format `[CODE]` for internal connections (e.g., `[APP-MOBILE-GRID]`)
+- **Conciseness**: Keep descriptions focused and actionable
 
-### Status Lifecycle
-- `germination` → `en croissance` after ≥2 significant evolutions
-- `en croissance` → `mature` when open questions close and concept stabilizes
-- `mature` → `archivée` when abandoned
-- Ideas become `fusionnée dans [CODE]` when fully absorbed by parent idea
+### Status Lifecycle Rules
+- `germination` → `en croissance` after ≥2 significant evolutions (tracked in history)
+- `en croissance` → `mature` when open questions resolve and concept stabilizes
+- `mature` → `archivée` when abandoned or superseded
+- `fusionnée dans [CODE]` when absorbed into a parent idea (keep original directory as redirect)
 
-### Tags Format
-- Comma-separated lowercase tags
-- Common tags: mobile, UX, CSS, React, skill, LLM, hardware, database, etc.
-- Must have at least one tag per idea
+### Tags Format & Conventions
+- Format: Comma-separated lowercase, no spaces (e.g., "mobile, UX, CSS, React")
+- Common tags: mobile, UX, CSS, React, skill, LLM, hardware, database, ontology, CLI, etc.
+- **Mandatory**: Every idea must have ≥1 tag
+- Consistency: Reuse existing tags when possible
 
-## Error Handling
+## Error Handling & Validation
 
 ### Duplicate Detection
 Before creating new ideas, check `idea-index.md` for similar codes. If found:
@@ -80,6 +92,12 @@ Before creating new ideas, check `idea-index.md` for similar codes. If found:
 - Don't force status transitions
 - Propose transitions when they seem natural
 - Keep status consistent with content maturity
+
+### File Integrity
+- Always verify `idea.md` exists before reading `history.md`
+- Ensure timestamps in history are in YYYY-MM-DD format
+- Check that Status values match defined lifecycle states
+- Validate that Tags are comma-separated without extra spaces
 
 ## Development Workflow
 
@@ -156,3 +174,10 @@ This system is Phase 1 (MVP for idea management). Future phases:
 - Phase 5: Mobile application
 
 Always maintain backward compatibility with Phase 1 directory structure.
+
+When making changes:
+1. Use TodoWrite tool to plan multistep tasks
+2. Mark todos as completed immediately after finishing each task
+3. Use Bash for git operations (add, commit, push)
+4. Use Read/Edit/Write tools for file operations, NOT Bash cat/sed/echo
+5. Update AGENTS.md or README.md if significant patterns change
