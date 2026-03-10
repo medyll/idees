@@ -1,8 +1,8 @@
 # idea-MATURATION
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-05
-**Statut :** en développement actif
+**Dernière évolution :** 2026-03-10
+**Statut :** mature
 **Tags :** idées, évolution, timeline, CLI, React, Electron, MCP, skill
 
 ## Description

@@ -1,7 +1,8 @@
 # idea-WEBCOMPONENT-NAMING
 
 **Date initiale :** 2026-03-03
-**Statut :** germination
+**Dernière évolution :** 2026-03-10
+**Statut :** en croissance
 **Tags :** Web Components, nommage, convention, Shadow DOM, interop
 
 ## Description

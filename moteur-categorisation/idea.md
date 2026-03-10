@@ -1,7 +1,8 @@
 # idea-MOTEUR-CATEGORISATION
 
 **Date initiale :** 2026-03-03
-**Statut :** germination
+**Dernière évolution :** 2026-03-10
+**Statut :** en croissance
 **Tags :** ontologie, catégorisation, arborescence, graph, datagramme, slider
 
 ## Description

@@ -1,6 +1,6 @@
 # Index des idées — Logiciel de Maturation
 
-> Dernière mise à jour : 2026-03-05
+> Dernière mise à jour : 2026-03-10
 > Format : `[code-lowercase]/idea.md` + `[code-lowercase]/history.md` (horodaté)
 
 ---
@@ -24,6 +24,8 @@
 | [WEBCOMPONENT-NAMING](webcomponent-naming/idea.md) | Nommage inversé et Shadow DOM communicant | Web Components, convention | — |
 | [MOTEUR-CATEGORISATION](moteur-categorisation/idea.md) | Moteur ontologique de catégorisation du monde | ontologie, arbre, graph | MATURATION |
 | [THEME-LUMINOSITE](theme-luminosite/idea.md) | Thème dark→light adaptatif à la luminosité par paliers | CSS, thème, accessibilité | — |
+| [AGENTS-REGISTRY](agents-registry/idea.md) | Registre centralisé auto-enregistrement & reporting d'agents | agent, registry, execution-status, database, distributed | MATURATION |
+| [TIMELINE-CATALOG](timeline-catalog/idea.md) | Index temporel du vocabulaire/tags avec score redondance | timeline, index, vocabulary, temporal | SKILL-MEMOIRE, AGENTS-REGISTRY |
 
 ---
 
@@ -39,6 +41,8 @@
 ## 📝 Notes transversales
 
 - **MATURATION** est le projet méta : il doit finir par gérer lui-même cet index
+- **AGENTS-REGISTRY** pourrait supporter l'orchestration de MATURATION en phase 4-5
+- **TIMELINE-CATALOG** + **SKILL-MEMOIRE** : redondance des tags = signal de mémoire active
 - **CSS-3D-LANGUAGE** et **MOTEUR-ANIMATION-CLIP** partagent une base clip-path
 - **MATURATION-SLIDER** est une sous-feature de **MATURATION** (Phase 3+)
 - Référence vidéo CSS clip-path : https://www.youtube.com/watch?v=oWXm5n-Zi38

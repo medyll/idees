@@ -55,26 +55,22 @@ All ideas live in lowercase directories alongside SKILL.md:
 ```markdown
 # idea-[CODE]
 
-**Date created:** YYYY-MM-DD
-**Last updated:** YYYY-MM-DD
-**Status:** germination | growing | mature | merged-into [CODE2] | archived
-**Tags:** tag1, tag2, tag3
+**Date initiale :** YYYY-MM-DD
+**Dernière évolution :** YYYY-MM-DD
+**Statut :** germination | en croissance | mature | fusionnée dans [CODE] | archivée
+**Tags :** tag1, tag2, tag3
 
 ## Description
 [Current idea text — always the most up-to-date version]
 
-## Potential
+## Potentiel
 [What it could become, why it matters]
 
-## Open Questions
+## Questions ouvertes
 [What remains unresolved, what deserves reflection]
 
-## Connections
-[Links to other ideas: idea-OTHERCODE]
-
-## History
-- YYYY-MM-DD : [brief evolution summary]
-- YYYY-MM-DD : Idea captured
+## Connexions
+[Links to other ideas: [CODE], [CODE2]]
 ```
 
 ### History File Format: `[CODE-lowercase]/history.md`
@@ -231,26 +227,34 @@ When you ask to see the history of an idea (e.g., "show me how the mobile grid e
 
 `idea-index.md` is the dashboard. Update it after every operation that creates, modifies, merges, or archives an idea.
 
-Minimal index structure:
+The index groups ideas by status (germination, en croissance, mature, fusionnée/archivée) with a table or list format.
+Essential columns/information:
+- **Code**: Uppercase idea code (e.g., `APP-MOBILE-GRID`)
+- **Titre** (Title): Brief description
+- **Tags**: Comma-separated tags
+- **Connexions**: Links to related ideas (if any)
+- **Dernière évolution** (Last Updated): YYYY-MM-DD
+
+Example structure:
 
 ```markdown
-# Idea Index
+# Index des Idées
 
-> Last updated: YYYY-MM-DD — [N] active ideas
+> Dernière mise à jour : YYYY-MM-DD — [N] idées actives
 
 ## 🌱 Germination
-| Code | Title | Tags | Connections | Last Updated |
-|------|-------|------|-------------|--------------|
-| [CODE](code-lowercase/idea.md) | ... | ... | ... | YYYY-MM-DD |
+| Code | Titre | Tags | Connexions | Dernière évolution |
+|------|-------|------|------------|-------------------|
+| [APP-MOBILE-GRID](app-mobile-grid/idea.md) | Navigation en grille mobile | mobile, UX | — | YYYY-MM-DD |
 
-## 🌿 Growing
+## 🌿 En croissance
 [same structure]
 
-## 🌳 Mature
+## 🌳 Matures
 [same structure]
 
-## 🔗 Merged / Archived
-[same structure, with parent idea noted]
+## 🔗 Fusionnées / Archivées
+[same structure, with parent code noted]
 ```
 
 ---
@@ -268,10 +272,11 @@ Minimal index structure:
 - **Respect your style**: If descriptions are short and informal, don't inflate them with jargon.
   If they're technical, go deeper.
 
-- **Date everything systematically.** All history entries require full timestamps.
+- **Date everything systematically.** All history entries require full timestamps (YYYY-MM-DD format).
 
-- **Speak French to you, but keep files in English.** All file content (descriptions, questions, connections) should be in English,
-  but your prompts, responses, and explanations are in French.
+- **Files are in French.** All file content (descriptions, questions, connections, headers, status values)
+  must be in French to align with AGENTS.md guidelines. Your responses to the user are also in French.
+  Only use English in this SKILL.md meta-documentation.
 
 ---
 
@@ -279,11 +284,11 @@ Minimal index structure:
 
 | Status | Meaning | Transitions To |
 |--------|---------|----------------|
-| `germination` | Fresh idea, little development | `growing` after ≥2 significant evolutions |
-| `growing` | Active development, ideas evolving | `mature` when open questions close |
-| `mature` | Well-defined, ready to implement or share | `archived` if abandoned |
-| `merged-into [CODE]` | Absorbed by another idea | — |
-| `archived` | On hold, not deleted | `germination` if revived |
+| `germination` | Fresh idea, little development | `en croissance` after ≥2 significant evolutions |
+| `en croissance` | Active development, ideas evolving | `mature` when open questions close |
+| `mature` | Well-defined, ready to implement or share | `archivée` if abandoned |
+| `fusionnée dans [CODE]` | Absorbed by another idea | — |
+| `archivée` | On hold, not deleted | `germination` if revived |
 
 Never force status transitions—suggest them when they feel natural.
 
@@ -308,7 +313,11 @@ The skill must remain backward-compatible:
 
 User: "améliore APP-MOBILE-GRID"
 
-Agent: Auto-detects directly, reads app-mobile-grid/idea.md, improves it, responds in French with changes and a question.
+Agent: Auto-détecte directement, lit app-mobile-grid/idea.md, l'améliore, répond en français :
+
+> ✨ APP-MOBILE-GRID enrichie. J'ai développé la section Potentiel avec des détails sur l'accessibilité au clavier et ajouté une connexion vers INTERFACE-BRIDGE. Le statut reste « germination » — on attend une ou deux évolutions supplémentaires avant de passer en « croissance ». 
+>
+> Nouvelle question : comment gères-tu les appareils avec écrans très étroits (mobiles anciens) où la grille doit se compresser ?
 
 ---
 
@@ -316,7 +325,7 @@ Agent: Auto-detects directly, reads app-mobile-grid/idea.md, improves it, respon
 
 User: "la navigation en grille mobile, c'est intéressant—on la développe"
 
-Agent: Reads `idea-index.md`, matches "grille mobile" to app-mobile-grid/, proceeds as in Example 1, responds in French.
+Agent: Lit `idea-index.md`, détecte « grille mobile » → app-mobile-grid/, procède comme dans Example 1, répond en français.
 
 ---
 
@@ -324,12 +333,14 @@ Agent: Reads `idea-index.md`, matches "grille mobile" to app-mobile-grid/, proce
 
 User: "améliore le truc LLM"
 
-Agent: Reads `idea-index.md`, finds multiple LLM-tagged ideas (interface-bridge, skill-memoire, etc.).
-Responds in French: "J'ai trouvé plusieurs idées liées à LLM. Tu visais :
-1. INTERFACE-BRIDGE (programme de compatibilité LLM)
-2. SKILL-MEMOIRE (skill de mémoire dégradante)
+Agent: Lit `idea-index.md`, trouve plusieurs idées liées à LLM (INTERFACE-BRIDGE, SKILL-MEMOIRE, etc.).
+Répond en français :
 
-Laquelle ?"
+> J'ai trouvé plusieurs idées liées à LLM. Tu visais :
+> 1. **INTERFACE-BRIDGE** — Programme de compatibilité inter-LLM
+> 2. **SKILL-MEMOIRE** — Skill avec mémoire dégradante
+>
+> Laquelle ?
 
 ---
 
@@ -337,23 +348,21 @@ Laquelle ?"
 
 User: "liste"
 
-Agent: Reads `idea-index.md`, responds in French:
+Agent: Lit `idea-index.md`, répond en français :
 
-```
-📋 Ta collection — 18 idées
-
-🌱 En germination (15)
-  • APP-MOBILE-GRID — Navigation en grille mobile — dernière évolution : 2026-03-03
-  • SKILL-STACKOVERFLOW — Skill StackOverflow + User-Bots — 2026-03-03
-  • ... (more ideas)
-
-🌿 En croissance (2)
-  • MATURATION — Logiciel de maturation d'idées — 2026-03-03
-  • MATURATION-SLIDER — Interface slider timeline — 2026-03-03
-
-🌳 Matures (1)
-  • [none yet]
-```
+> 📋 Ta collection — 18 idées
+>
+> 🌱 En germination (15)
+>   • APP-MOBILE-GRID — Navigation en grille mobile — dernière évolution : 2026-03-03
+>   • SKILL-STACKOVERFLOW — Skill StackOverflow + User-Bots — 2026-03-03
+>   • ... (plus d'idées)
+>
+> 🌿 En croissance (2)
+>   • MATURATION — Système de maturation d'idées — 2026-03-03
+>   • MATURATION-SLIDER — Interface slider timeline — 2026-03-03
+>
+> 🌳 Matures (1)
+>   • [aucune pour l'instant]
 
 ---
 
@@ -361,10 +370,11 @@ Agent: Reads `idea-index.md`, responds in French:
 
 User: "j'ai une idée : créer un moteur audio qui adapte sa sortie selon le ton émotionnel du texte"
 
-Agent: Checks `idea-index.md` → no match → generates code `AUDIO-EMOTION-ENGINE` → creates `audio-emotion-engine/` directory
-with `idea.md` and `history.md` → updates index → responds in French:
+Agent: Vérifie `idea-index.md` → pas de match → génère le code `AUDIO-EMOTION-ENGINE` → crée le répertoire `audio-emotion-engine/` avec `idea.md` et `history.md` → met à jour l'index → répond en français :
 
-"Capturé sous `AUDIO-EMOTION-ENGINE`. L'idée de fond, c'est l'analyse de sentiment qui pilote la synthèse audio—texte triste → fréquences basses, texte énergique → tempo rapide. Question : tu vises la synthèse TTS en temps réel, ou du texte statique avec génération audio après coup ?"
+> 🌱 Capturé sous **AUDIO-EMOTION-ENGINE**. L'idée de fond, c'est l'analyse de sentiment qui pilote la synthèse audio—texte triste → fréquences basses, texte énergique → tempo rapide. Super concept.
+>
+> Question : tu vises la synthèse TTS en temps réel avec feedback émotionnel instantané, ou du texte statique avec génération audio post-traitement ?
 
 ---
 
@@ -372,7 +382,21 @@ with `idea.md` and `history.md` → updates index → responds in French:
 
 User: "montre-moi l'historique du truc sur la mémoire dégradante"
 
-Agent: Auto-detects skill-memoire/ from keywords → reads `skill-memoire/history.md` → presents evolution chronologically in French.
+Agent: Auto-détecte skill-memoire/ par les mots-clés → lit `skill-memoire/history.md` → présente l'évolution chronologiquement en français :
+
+> 📜 Évolution de **SKILL-MEMOIRE**
+>
+> ---
+>
+> **2026-03-01 14:30** — Amélioration : Clarification du modèle de dégradation
+> 
+> Passage de « la mémoire diminue progressivement » à un modèle détaillé : accès répété renforce, accès infrequent affaiblit avec courbe d'oubli exponentielle. Connexion ajoutée vers MATURATION.
+>
+> ---
+>
+> **2026-02-15 09:00** — Capture initiale
+>
+> Idée brute : skill qui maintient une mémoire utilisateur dégradante pour simuler l'oubli naturel.
 
 ---
 
@@ -380,6 +404,12 @@ Agent: Auto-detects skill-memoire/ from keywords → reads `skill-memoire/histor
 
 User: "grandir celui-ci avec des détails sur les styles narratifs"
 
-Agent: Uses conversation context to detect the most recently mentioned idea (e.g., SKILL-COMMITS-ROMANESQUE)
-→ reads skill-commits-romanesque/idea.md → enriches with narrative styles → responds in French with changes.
+Agent: Utilise l'historique de conversation pour déterminer l'idée mentionnée récemment (ex: SKILL-COMMITS-ROMANESQUE)
+→ lit skill-commits-romanesque/idea.md → l'enrichit avec les styles narratifs → répond en français :
+
+> 🌿 **SKILL-COMMITS-ROMANESQUE** : Enrichie avec détails sur les styles narratifs.
+>
+> J'ai ajouté une section sur les 4 archétypes narratifs (épique, tragique, comique, ironique) et comment les messages de commit peuvent emprunter à chacun. Le statut passe en « en croissance » puisqu'on vient de résoudre deux questions ouvertes.
+>
+> Nouvelle question : comment adapter la tonalité à la sévérité du changement (fix mineur vs refactoring majeur) ?
 
