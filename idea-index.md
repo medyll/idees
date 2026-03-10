@@ -5,7 +5,7 @@
 
 ---
 
-## 🌱 En germination
+## 🌿 En croissance
 
 | Code | Titre court | Tags | Connexions |
 |------|-------------|------|------------|
@@ -29,7 +29,7 @@
 
 ---
 
-## 🔨 En développement actif
+## 🌳 Matures
 
 | Code | Titre court | Tags | Connexions |
 |------|-------------|------|------------|

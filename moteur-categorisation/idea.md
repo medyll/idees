@@ -2,7 +2,7 @@
 
 **Date initiale :** 2026-03-03
 **Dernière évolution :** 2026-03-10
-**Statut :** en croissance
+**Statut :** mature
 **Tags :** ontologie, catégorisation, arborescence, graph, datagramme, slider
 
 ## Description

@@ -2,7 +2,7 @@
 
 **Date initiale :** 2026-03-02
 **Dernière évolution :** 2026-03-10
-**Statut :** mature
+**Statut :** archivée
 **Tags :** idées, évolution, timeline, CLI, React, Electron, MCP, skill
 
 ## Description

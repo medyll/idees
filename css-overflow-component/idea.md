@@ -2,7 +2,7 @@
 
 **Date initiale :** 2026-03-02
 **Dernière évolution :** 2026-03-10
-**Statut :** en croissance
+**Statut :** mature
 **Tags :** CSS, composant, overflow, pseudo-composant, layout
 
 ## Description

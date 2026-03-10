@@ -2,7 +2,7 @@
 
 **Date initiale :** 2026-03-06
 **Dernière évolution :** 2026-03-10
-**Statut :** en croissance
+**Statut :** mature
 **Tags :** timeline, index, vocabulary, tags, redondance, temporal-index
 
 ## Description

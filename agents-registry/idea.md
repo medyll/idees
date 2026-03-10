@@ -2,7 +2,7 @@
 
 **Date initiale :** 2026-03-05
 **Dernière évolution :** 2026-03-10
-**Statut :** en croissance
+**Statut :** mature
 **Tags :** agent, registry, execution-status, database, distributed
 
 ## Description
