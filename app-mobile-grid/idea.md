@@ -1,7 +1,7 @@
 # idea-APP-MOBILE-GRID
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** mobile, UX, navigation, grille
 
@@ -33,9 +33,19 @@ Interface très naturelle pour des flows complexes avec des bifurcations. Adapt�
 - Le retour arrière (gauche/haut) détruit ou conserve l'état ?
 - Y a-t-il une vue "carte" pour voir où on est dans la grille ?
 
+## Réflexion approfondie
+
+La grille 2D cache une métaphore plus riche : **le temps (axe Y) vs les possibles (axe X)**. Chaque ligne horizontale est un "monde parallèle" d'une même étape. Ce n'est pas juste une navigation — c'est un modèle mental pour explorer des espaces de décision.
+
+Connexion inattendue avec **SKILL-MEMOIRE** : la grille pourrait "oublier" les branches trop éloignées du chemin principal (pruning automatique des états peu visités), simulant une mémoire spatiale dégradante.
+
+La question "qu'est-ce qui change légèrement dans le clone" trouve une réponse partielle : ce qui change c'est **un paramètre configuré au moment du swipe** (ex: choisir une variante A/B, une langue, un profil utilisateur). Le swipe droite = "essaie avec ce paramètre différent".
+
 ## Connexions
 
-Lien avec **MATURATION** : l'UI mobile de Phase 5 pourrait utiliser cette navigation grille.
+- **MATURATION** : l'UI mobile de Phase 5 pourrait utiliser cette navigation grille
+- **SKILL-MEMOIRE** : pruning des branches peu visitées = mémoire spatiale dégradante
+- **APP-PERSONNALITE** : l'axe X pourrait montrer des variantes de profil de personnalité
 
 ## Historique
 

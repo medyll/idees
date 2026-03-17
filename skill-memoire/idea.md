@@ -1,7 +1,7 @@
 # idea-SKILL-MEMOIRE
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** mémoire, LLM, skill, dégradation, cerveau, français
 
@@ -48,10 +48,20 @@ Mémoire contextuelle réaliste pour agents LLM. Évite la sur-accumulation de c
 - **Cycles de dégradation** : Tous les N heures ? À la volée ? Basé sur nombre d'interactions ?
 - **Saillance** : Comment définir qu'un souvenir mérite de rester "frais" ?
 
+## Réflexion approfondie
+
+Question résolue : **efficacité de la recherche inversée**. Chercher d'abord sur le Niveau 3 (5-10 mots-clés) avec BM25 coûte quasi rien. Si match, on récupère le Niveau 0 (détail complet) seulement si nécessaire. Le gain computationnel est réel : on évite d'embedder et de comparer des textes longs pour des requêtes qui ne matchent pas.
+
+**Saillance** (question partiellement résolue) : un souvenir est saillant si (1) il a été rappelé récemment, (2) il est connecté à d'autres souvenirs actifs, (3) il a une charge émotionnelle marquée (détectable dans le texte par le LLM de stockage). Ces trois critères combinés → score de saillance.
+
+Connexion inattendue avec **TIMELINE-CATALOG** : les tags d'un souvenir au Niveau 3 sont exactement ce que TIMELINE-CATALOG track. SKILL-MEMOIRE + TIMELINE-CATALOG = une mémoire avec conscience de son propre état (sait ce qu'elle a pensé récemment vs ce qu'elle oublie).
+
 ## Connexions
 
-- **IDEAX** : MEMO pourrait alimenter IDEAX — un souvenir qui revient souvent devient une idée.
-- **SKILL-STACKOVERFLOW** : les bots pourraient utiliser ce système de mémoire.
+- [MATURATION](../maturation/idea.md) : un souvenir qui revient souvent pourrait devenir une idée dans MATURATION
+- [SKILL-STACKOVERFLOW](../skill-stackoverflow/idea.md) : les bots pourraient utiliser ce système de mémoire
+- [TIMELINE-CATALOG](../timeline-catalog/idea.md) : les tags Niveau 3 des souvenirs = vocabulaire actif trackable
+- [MOTEUR-CATEGORISATION](../moteur-categorisation/idea.md) : backend d'indexation multi-catégories pour les souvenirs
 
 ## Historique
 

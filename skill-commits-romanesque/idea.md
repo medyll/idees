@@ -1,7 +1,7 @@
 # idea-SKILL-COMMITS-ROMANESQUE
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** git, skill, narration, storytelling, LLM, humour
 
@@ -48,10 +48,19 @@ Fun, pédagogique pour comprendre un projet en un coup d'œil. Peut aussi servir
 - On traite un seul auteur ou toute l'équipe comme des personnages ?
 - Longueur : nouvelle courte ou saga selon la taille du repo ?
 
+## Réflexion approfondie
+
+Questions résolues :
+- **Taille max** : traiter par fenêtres de 100 commits, résumer chaque fenêtre en une scène, puis générer le récit sur les résumés. Coût LLM maîtrisé.
+- **Style automatique vs choisi** : l'analyse des commits peut détecter le ton naturel. Beaucoup de `fix:` et `hotfix:` = thriller. Beaucoup de `feat:` ambitieux = épopée. Proposer le style détecté, laisser l'utilisateur confirmer.
+
+Connexion inattendue avec **SKILL-MEMOIRE** : le roman généré *est* une mémoire dégradée du projet. La version narrative est le Niveau 2 (impression générale) — plus lisible que les commits bruts mais moins précise. On pourrait générer plusieurs niveaux de résumé narratif automatiquement.
+
 ## Connexions
 
 - Candidat MVP rapide — implémentable en quelques heures.
-- Lien thématique avec **MATURATION** : l'histoire d'une idée pourrait aussi se raconter ainsi.
+- [MATURATION](../maturation/idea.md) : l'histoire d'une idée pourrait aussi se raconter ainsi
+- [SKILL-MEMOIRE](../skill-memoire/idea.md) : le roman est une mémoire narrative dégradée du projet
 
 ## Historique
 

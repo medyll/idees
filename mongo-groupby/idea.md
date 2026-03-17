@@ -1,7 +1,7 @@
 # idea-MONGO-GROUPBY
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** MongoDB, SQL, aggregation, DX
 
@@ -40,9 +40,18 @@ Réduire drastiquement la verbosité des agrégations MongoDB. Pourrait être un
 - Support de toutes les étapes de pipeline ou seulement les plus communes ?
 - Compatible Mongoose ?
 
+## Réflexion approfondie
+
+La vraie tension : **lisibilité vs exhaustivité**. Les cas simples (groupBy + join) couvrent 80% des usages réels. Les 20% restants (`$facet`, `$bucket`, `$unwind`) sont là où le pipeline Mongo brille. La lib doit permettre **l'évasion gracieuse** : si la méthode fluent ne suffit pas, on peut passer au pipeline brut directement.
+
+Piste de design : `db.collection('orders').groupBy(...).raw([{ $bucket: ... }])` — le `.raw()` insère du pipeline natif dans la chaîne fluent.
+
+Question résolue (partielle) : Mongoose ne couvre pas ça car il cible le schéma/validation, pas l'aggregation ergonomique. La lib serait complémentaire de Mongoose, pas concurrente.
+
 ## Connexions
 
-Lien avec **INTERFACE-BRIDGE** : pourrait être généré automatiquement.
+- [INTERFACE-BRIDGE](../interface-bridge/idea.md) : pourrait générer l'adaptateur MongoDB automatiquement
+- Connexion potentielle avec **MOTEUR-CATEGORISATION** : une ontologie stockée en Mongo bénéficierait directement de cette API pour les requêtes hiérarchiques
 
 ## Historique
 

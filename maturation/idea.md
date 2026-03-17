@@ -1,7 +1,7 @@
 # idea-MATURATION
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** archivée
 **Tags :** idées, évolution, timeline, CLI, React, Electron, MCP, skill
 
@@ -65,8 +65,19 @@ Intégration future avec :
 - **Métriques de maturation** : Comment mesurer qu'une idée est prête pour passer de germination → mature ?
 - **Collaboration** : Multi-utilisateur ? Idées partagées ou toujours personnelles ?
 
+## Réflexion approfondie (2026-03-17)
+
+MATURATION est maintenant en statut **archivée** car la Phase 1 est **entièrement implémentée et opérationnelle** — ce fichier en est la preuve vivante. La réflexion utile se déplace vers la Phase 2.
+
+La Phase 2 (CLI) a un point d'entrée naturel évident : un script `mature.js` qui lit tous les `idea.md`, les passe à un LLM avec le prompt de SKILL.md, et écrit les mises à jour. C'est exactement ce qui se passe aujourd'hui manuellement.
+
+Question résolue : **l'auto-détection** — le système actuel prouve qu'un LLM comprend "la grille mobile" → APP-MOBILE-GRID sans distance de Levenshtein. La Phase 2 peut donc s'appuyer sur un LLM directement, pas sur du fuzzy matching.
+
+Question ouverte nouvelle : comment gérer les **idées contradictoires** ? Deux idées peuvent proposer des approches mutuellement exclusives. Le système doit-il signaler les tensions, ou laisser coexister les contradictions comme état normal de la pensée ?
+
 ## Connexions
 
-- [MATURATION-SLIDER](MATURATION-SLIDER) : Vue timeline/historique des idées
-- [MOTEUR-CATEGORISATION](MOTEUR-CATEGORISATION) : Organiser les idées en graphe ontologique
+- [MATURATION-SLIDER](../maturation-slider/idea.md) : Vue timeline/historique des idées
+- [MOTEUR-CATEGORISATION](../moteur-categorisation/idea.md) : Organiser les idées en graphe ontologique
+- [AGENTS-REGISTRY](../agents-registry/idea.md) : La Phase 3+ nécessitera plusieurs agents orchestrés
 - Tous les autres projets de cette liste : utilisateurs du système MATURATION

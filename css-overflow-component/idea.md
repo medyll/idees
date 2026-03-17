@@ -1,7 +1,7 @@
 # idea-CSS-OVERFLOW-COMPONENT
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** CSS, composant, overflow, pseudo-composant, layout
 
@@ -51,9 +51,18 @@ Composant layout réutilisable pour des panels, drawers, sidebars, modals avec s
 - Compatible avec les containers queries ?
 - Testé dans quel contexte (Flexbox ? Grid ?) ?
 
+## Réflexion approfondie
+
+La vraie question derrière ce composant est philosophique : **CSS ne pense pas en termes de "remplir son conteneur de façon scroll-safe"** — c'est un angle mort du modèle de boîte. Les solutions modernes (`100cqh`, `100dvh`, `field-sizing`) convergent vers ce besoin mais chacune résout un sous-cas.
+
+Piste de résolution : le composant pourrait utiliser un `ResizeObserver` en JS pour mesurer dynamiquement le conteneur et appliquer une hauteur explicite — solution robuste même sans container queries, au prix d'un flash initial.
+
+Connexion inattendue avec **WEBCOMPONENT-NAMING** : ce composant est un cas d'école pour le Shadow DOM communicant — il doit exposer des `parts` CSS pour que l'utilisateur puisse thématiser le scroll sans casser l'encapsulation.
+
 ## Connexions
 
-Relation technique avec **CSS-3D-LANGUAGE** : les deux travaillent sur les limites CSS modernes.
+- **CSS-3D-LANGUAGE** : les deux travaillent sur les limites CSS modernes
+- **WEBCOMPONENT-NAMING** : cas d'usage exemplaire pour Shadow DOM avec parts exposés proprement
 
 ## Historique
 

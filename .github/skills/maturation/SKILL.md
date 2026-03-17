@@ -11,7 +11,7 @@ argument-hint: "[natural language describing an idea action, or CODE for explici
 compatibility:
   - claude-haiku-4.5
   - claude-opus
-user-invokable: true
+user-invocable: true
 disable-model-invocation: false
 license: MIT
 metadata: {}

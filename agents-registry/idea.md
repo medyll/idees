@@ -1,7 +1,7 @@
 # idea-AGENTS-REGISTRY
 
 **Date initiale :** 2026-03-05
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** agent, registry, execution-status, database, distributed
 
@@ -34,7 +34,19 @@ Le registre peut être stocké soit dans :
 - Doit-on inclure un **système de heartbeat** pour détecter les agents morts ?
 - Quels événements doivent être enregistrés ? (création, mise à jour d'état, erreur, achèvement)
 
+## Sous-problèmes identifiés
+
+- **Schéma de métadonnées minimal** : quel est le contrat d'enregistrement minimum viable ? (id, type, version, capabilities[], status, lastSeen)
+- **Stratégie de heartbeat** : ping actif toutes les N secondes vs tombstone passif (agent marque lui-même son arrêt) — la deuxième est plus robuste aux crashes
+- **Résilience au redémarrage** : si le registre lui-même tombe, les agents doivent pouvoir rejoindre sans perdre leur historique → persistance obligatoire dès le départ
+- **Observabilité** : un tableau de bord temps réel (WebSocket ou SSE) serait naturel comme Phase 2
+
+## Connexion inattendue
+
+TIMELINE-CATALOG + AGENTS-REGISTRY forment un duo naturel : chaque agent a son propre historique de vocabulaire (timeline sémantique), le registre orchestre qui a le droit de parler à qui. Ensemble ils constituent un **système nerveux** pour une flotte d'agents.
+
 ## Connexions
 
 - [MATURATION](../maturation/idea.md) : Le projet méta qui pourrait utiliser ce registre pour orchestrer ses phases
 - [SKILL-EXPLORER](../skill-explorer/idea.md) : Pourrait découvrir des agents comme il découvre des skills
+- [TIMELINE-CATALOG](../timeline-catalog/idea.md) : Chaque agent enregistré pourrait embarquer son propre TIMELINE-CATALOG

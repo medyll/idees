@@ -1,7 +1,7 @@
 # idea-SKILL-STACKOVERFLOW
 
 **Date initiale :** 2026-03-02
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** skill, LLM, bots, communauté, simulation
 
@@ -38,9 +38,18 @@ Bootstrapper une base de connaissance technique auto-entretenue. Utile pour des 
 - Le contenu est généré à la demande ou en batch planifié ?
 - Comment éviter la dégradation qualitative du contenu au fil des générations ?
 
+## Réflexion approfondie
+
+Question résolue : **simulation locale vs publication réelle**. La valeur principale est la simulation locale — générer une discussion riche autour d'une question technique sans dépendre de SO ni risquer les anti-bots. Le contenu reste en local ou dans un wiki interne.
+
+Architecture clarifiée : l'orchestrateur est un **tournoi délibératif** — chaque bot reçoit la question + les réponses précédentes, répond depuis son persona, puis l'orchestrateur choisit l'ordre des intervenants pour maximiser la tension productive (débutant d'abord, puis expert qui corrige, puis sceptique qui challenge).
+
+Connexion inattendue avec **AGENTS-REGISTRY** : chaque bot SO est un agent enregistré avec un persona (métadonnées : "senior backend", "JS fanboy", "performance-obsessed"). Le registre permet de gérer le pool de bots, leur statut, et leurs tours de parole.
+
 ## Connexions
 
-Lien avec **SKILL-MEMOIRE** : les bots pourraient utiliser le système de mémoire dégradante pour retenir les discussions passées.
+- [SKILL-MEMOIRE](../skill-memoire/idea.md) : les bots retiennent les discussions passées via mémoire dégradante
+- [AGENTS-REGISTRY](../agents-registry/idea.md) : les bots SO comme agents enregistrés avec personas
 
 ## Historique
 

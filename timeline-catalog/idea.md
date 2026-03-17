@@ -1,7 +1,7 @@
 # idea-TIMELINE-CATALOG
 
 **Date initiale :** 2026-03-06
-**Dernière évolution :** 2026-03-10
+**Dernière évolution :** 2026-03-17
 **Statut :** mature
 **Tags :** timeline, index, vocabulary, tags, redondance, temporal-index
 
@@ -41,8 +41,17 @@ Un index temporel qui capture l'**évolution du vocabulaire (tags, mots-clés) a
 - **Signaux d'alertes** : À quel score de redondance on dit "attention, tu tournes en rond" ?
 - **Visualisation** : Comment montrer cette timeline ? Graphe temporel ? Heatmap ?
 
+## Réflexion approfondie
+
+Question résolue : **calcul de redondance**. Jaccard index (`|A∩B| / |A∪B|`) est parfait pour les ensembles de tags — simple, interprétable, sans modèle. Si on veut plus de nuance (synonymes, variations morphologiques), on ajoute un second calcul cosine sur embeddings des tags, mais Jaccard est suffisant pour la détection de "tournage en rond".
+
+Question résolue : **granularité**. Adaptive est la bonne réponse : on snapshot quand il y a changement significatif (`delta_Jaccard > 0.3`) plutôt qu'à intervalles fixes. Cela donne une résolution naturelle — beaucoup de snapshots pendant les moments de transition, peu pendant les phases stables.
+
+**Signal d'alerte** résolu : si la redondance reste > 80% pendant 3 snapshots consécutifs, on notifie "tu sembles explorer le même espace depuis un moment — veux-tu un angle différent ?"
+
 ## Connexions
 
 - [SKILL-MEMOIRE](../skill-memoire/idea.md) : La redondance des tags = signal de mémoire active
-- [MATURATION](../maturation/idea.md) : Pourrait tracker l'évolution sémantique des idées dans le système
-- [AGENTS-REGISTRY](../agents-registry/idea.md) : Chaque agent pourrait avoir son TIMELINE-CATALOG personnel
+- [MATURATION](../maturation/idea.md) : Tracker l'évolution sémantique des idées dans le système
+- [AGENTS-REGISTRY](../agents-registry/idea.md) : Chaque agent enregistré a son propre TIMELINE-CATALOG
+- [MATURATION-SLIDER](../maturation-slider/idea.md) : même structure DAG temporelle, vues complémentaires
