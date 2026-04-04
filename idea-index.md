@@ -1,6 +1,6 @@
 # Index des idées — Logiciel de Maturation
 
-> Dernière mise à jour : 2026-03-17
+> Dernière mise à jour : 2026-04-04 05:02
 > Format : `[code-lowercase]/idea.md` + `[code-lowercase]/history.md` (horodaté)
 
 ---
@@ -27,6 +27,16 @@
 | [THEME-LUMINOSITE](theme-luminosite/idea.md) | Thème dark→light adaptatif à la luminosité par paliers | CSS, thème, accessibilité | CSS-OVERFLOW-COMPONENT, APP-MOBILE-GRID |
 | [TIMELINE-CATALOG](timeline-catalog/idea.md) | Index temporel du vocabulaire/tags avec score redondance | timeline, index, vocabulary | SKILL-MEMOIRE, AGENTS-REGISTRY, MATURATION-SLIDER |
 | [WEBCOMPONENT-NAMING](webcomponent-naming/idea.md) | Nommage inversé et Shadow DOM communicant | Web Components, convention | CSS-OVERFLOW-COMPONENT |
+
+---
+
+## 🌱 En germination
+
+| Code | Titre court | Tags | Connexions |
+|------|-------------|------|------------|
+| [AGENT-INBOX-MATURATION](agent-inbox-maturation/idea.md) | Inbox unique + agent auto-nettoyage | agent, inbox, trigger, auto-nettoyage | MATURATION, AGENTS-REGISTRY |
+| [MOTEUR-DASHBOARD](moteur-dashboard/idea.md) | Moteur de dashboard générique piloté markdown | dashboard, moteur, plugin, générique | IDAE-DASHBOARD, INTERFACE-BRIDGE |
+| [TEST-PROTO-INBOX](test-proto-inbox/idea.md) | Test du prototype inbox | prototype, agent, inbox, test | AGENT-INBOX-MATURATION |
 
 ---
 
