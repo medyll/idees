@@ -1,0 +1,15 @@
+{
+  "name": "@idae/agent-bmad-orchestration",
+  "version": "0.1.0",
+  "description": "Agent autonome pour l'orchestration des projets BMAD",
+  "main": "orchestrator.js",
+  "bin": {
+    "bmad-orchestrator": "./orchestrator.js"
+  },
+  "scripts": {
+    "start": "node orchestrator.js",
+    "test": "node orchestrator.js"
+  },
+  "author": "Meddy Lebrun Ferdinand",
+  "license": "MIT"
+}

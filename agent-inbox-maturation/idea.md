@@ -1,7 +1,7 @@
 # idea-AGENT-INBOX-MATURATION
 
 **Date initiale :** 2026-04-04  
-**Dernière évolution :** 2026-04-04 05:26  
+**Dernière évolution :** 2026-04-04 05:40  
 **Statut :** germination  
 **Tags :** agent, capture, trigger, maturation, rotation, OpenClaw
 
@@ -37,6 +37,7 @@ Rotation si >30 idées (supprime bas du fichier)
 - Comment détecter les fragments "similaires" pour les regrouper ? (keywords, sémantique ?)
 - Faut-il un délai avant traitement (pour regrouper plusieurs fragments d'un coup) ?
 - Comment gérer les idées venant d'autres systèmes (format standardisé ?) ?
+- **RÉSOLU :** Conscience des projets BMAD via `bmad-list-projects.ps1`
 
 ## Connexions
 

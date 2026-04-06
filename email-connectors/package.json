@@ -1,0 +1,16 @@
+{
+  "name": "@idae/email-connectors",
+  "version": "0.1.0",
+  "description": "Connecteurs email pour Gmail, Outlook, Proton",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "setup": "node setup.js"
+  },
+  "dependencies": {
+    "imap": "^0.8.19",
+    "mailparser": "^3.7.2"
+  },
+  "author": "Meddy Lebrun Ferdinand",
+  "license": "MIT"
+}

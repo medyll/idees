@@ -1,7 +1,7 @@
 # Index des idées — Logiciel de Maturation
 
-> Dernière mise à jour : 2026-04-04 05:02
-> Format : `[code-lowercase]/idea.md` + `[code-lowercase]/history.md` (horodaté)
+> Dernière mise à jour : 2026-04-06 17:00
+> Format : `[code-lowercase]/idea.md` (état courant) + `[code-lowercase]/history.md` (table des matières) + `[code-lowercase]/history/` (fichiers par step)
 
 ---
 
@@ -34,9 +34,26 @@
 
 | Code | Titre court | Tags | Connexions |
 |------|-------------|------|------------|
-| [AGENT-INBOX-MATURATION](agent-inbox-maturation/idea.md) | Inbox unique + agent auto-nettoyage | agent, inbox, trigger, auto-nettoyage | MATURATION, AGENTS-REGISTRY |
-| [MOTEUR-DASHBOARD](moteur-dashboard/idea.md) | Moteur de dashboard générique piloté markdown | dashboard, moteur, plugin, générique | IDAE-DASHBOARD, INTERFACE-BRIDGE |
+| [OPENCLAW-BROWSER-EXTENSION](openclaw-browser-extension/idea.md) | Extension navigateur OpenClaw (sidebar) | openclaw, browser, extension, chrome, sidebar | OPENCLAW-OS-INTEGRATION, OPENCLAW-TAILSCALE-DOMAINS |
+| [OPENCLAW-TAILSCALE-DOMAINS](openclaw-tailscale-domains/idea.md) | Sous-domaines Tailscale pour projets OpenClaw | openclaw, tailscale, domaines, HTTPS, deployment | OPENCLAW-OS-INTEGRATION, IDAE-DASHBOARD-MULTI-SCOPES |
+| [AGENT-BMAD-ORCHESTRATION](agent-bmad-orchestration/idea.md) | Agent autonome orchestration projets BMAD | agent, bmad, orchestration, autonome | BMAD-MASTER, AGENT-INBOX-MATURATION |
+| [AGENT-INBOX-MATURATION](agent-inbox-maturation/idea.md) | Capture + projets BMAD + rotation 30 | agent, capture, rotation, BMAD | MATURATION, AGENTS-REGISTRY |
+| [IDAE-MACHINE-COEUR](idae-machine-coeur/idea.md) | Librairie schema-driven UI (v0.136.0, 186 tests) | core, data, UI, Svelte 5, IndexedDB, validation | QOOLIE, DELTA-SIMCA, MOTEUR-DASHBOARD, IDAE-IDBQL |
+| [EMAIL-CONNECTORS](email-connectors/idea.md) | Connecteurs Gmail, Outlook, Proton | email, IMAP, OAuth, Gmail, Outlook, Proton | AGENT-INBOX-MATURATION, VOICE-MOBILE |
+| [IDAE-ANDROID-CAPTURE](idae-android-capture/idea.md) | App Android bouton flottant capture maturation | android, app, capture, bouton, mobile, IDAE | AGENT-INBOX-MATURATION, IDAE-MACHINE-COEUR |
+| [LATENT-LINE-VS-CAPCUT](latent-line-vs-capcut/idea.md) | Comparatif Latent Line vs CapCut Desktop | comparatif, vidéo, IA, édition, positionnement | LATENT-LINE, MOTEUR-ANIMATION-CLIP |
+| [MATURATION-5-ITERATIONS](maturation-5-iterations/idea.md) | Workflow 5 itérations avant BMAD final | maturation, itérations, cron, workflow, notif | MATURATION-BMAD-AUTO, AGENT-INBOX-MATURATION |
+| [MATURATION-BMAD-AUTO](maturation-bmad-auto/idea.md) | Génération auto dossier BMAD par maturation | bmad, maturation, auto-génération, dashboard | MATURATION-5-ITERATIONS, MOTEUR-DASHBOARD |
+| [MOTEUR-DASHBOARD](moteur-dashboard/idea.md) | Moteur de dashboard générique piloté markdown | dashboard, moteur, plugin, générique | IDAE-DASHBOARD, INTERFACE-BRIDGE, **MATURATION** |
 | [TEST-PROTO-INBOX](test-proto-inbox/idea.md) | Test du prototype inbox | prototype, agent, inbox, test | AGENT-INBOX-MATURATION |
+| [VOICE-INTERFACE-HISTORIQUE](voice-interface-historique/idea.md) | Interface vocale maturation + historique inbox | voice, TTS, STT, historique | IDAE-ANDROID-CAPTURE, MATURATION, MOTEUR-DASHBOARD |
+| [PSEUDO-HTML-AUTO-LEARNING](pseudo-html-auto-learning/idea.md) | Skill pseudo-html auto-apprenante | skill, auto-learning, skiller, test | SKILLER, SKILL-MASTER |
+| [BMAD-TEST-ENFORCEMENT](bmad-test-enforcement/idea.md) | Enforcement tests réels avant story complete | bmad, tests, enforcement, quality | BMAD-MASTER, AGENT-BMAD-ORCHESTRATION | **✅ IMPLÉMENTÉ** |
+| [CSS-BASE-DEMO-REFONT](css-base-demo-refont/idea.md) | Refonte 10 démos css-base avec nouvelles capacités | css-base, demos, skinning, refonte | CSS-BASE, SKILLER |
+| [IDAE-DASHBOARD-MULTI-SCOPES](idae-dashboard-multi-scopes/idea.md) | Architecture multi-scopes (BMAD, Matur, etc.) + colonnes sticky | idae-dashboard, architecture, scopes, sticky | IDAE-DASHBOARD, APP-MOBILE-GRID |
+| [OPENCLAW-OS-INTEGRATION](openclaw-os-integration/idea.md) | Icônes agents OpenClaw dans Windows (PWA) | openclaw, Windows, PWA, OS integration | IDAE-ANDROID-CAPTURE (plus tard), VOICE-INTERFACE-HISTORIQUE |
+| [PLACE-DE-GREVE](place-de-greve/idea.md) | File d'attente missions pour agents (kanban textuel → skill) | agent, file-attente, mission, kanban, workflow | AGENT-INBOX-MATURATION, AGENT-BMAD-ORCHESTRATION, BMAD-TEST-ENFORCEMENT |
+| [VIDEO-FLOTTANTE-PIP](video-floattante-pip/idea.md) | Lecteur vidéo persistant flottant (PIP) | vidéo, PIP, flottant, UX | LATENT-LINE-VS-CAPCUT, MOTEUR-DASHBOARD |
 
 ---
 
@@ -58,4 +75,5 @@
 - **SKILL-COMMITS-ROMANESQUE** : candidat MVP rapide, implémentable en quelques heures
 - **WEBCOMPONENT-NAMING** → **CSS-OVERFLOW-COMPONENT** : manifeste + cas d'école concret
 - Référence vidéo CSS clip-path : https://www.youtube.com/watch?v=oWXm5n-Zi38
-- Chaque idée : `[code-lowercase]/idea.md` + `[code-lowercase]/history.md`
+- Chaque idée : `[code-lowercase]/idea.md` + `[code-lowercase]/history.md` (table) + `[code-lowercase]/history/` (steps individuels)
+- **Aucun script externe** (pas de `validate.mjs` ni autre exécutable) — tout en markdown
