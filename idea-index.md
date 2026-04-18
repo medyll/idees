@@ -36,6 +36,8 @@
 |------|-------------|------|------------|
 | [OPENCLAW-BROWSER-EXTENSION](openclaw-browser-extension/idea.md) | Extension navigateur OpenClaw (sidebar) | openclaw, browser, extension, chrome, sidebar | OPENCLAW-OS-INTEGRATION, OPENCLAW-TAILSCALE-DOMAINS |
 | [OPENCLAW-TAILSCALE-DOMAINS](openclaw-tailscale-domains/idea.md) | Sous-domaines Tailscale pour projets OpenClaw | openclaw, tailscale, domaines, HTTPS, deployment | OPENCLAW-OS-INTEGRATION, IDAE-DASHBOARD-MULTI-SCOPES |
+| [MES-AMIS-APP](mes-amis-app/idea.md) | App de chat social avec amis IA uniques | social, IA, chat, démo, simulacre | VOICE-MOBILE, EXTENSION-IA-GRATUITE, PERSONAL-AGENT |
+| [EXTENSION-IA-GRATUITE](extension-ia-gratuite/idea.md) | Extension agrégateur de quotas IA gratuits | extension, navigateur, IA, gratuit, quota | VOICE-MOBILE, TUI-ALTERNATIVES, PERSONAL-AGENT |
 | [AGENT-BMAD-ORCHESTRATION](agent-bmad-orchestration/idea.md) | Agent autonome orchestration projets BMAD | agent, bmad, orchestration, autonome | BMAD-MASTER, AGENT-INBOX-MATURATION |
 | [AGENT-INBOX-MATURATION](agent-inbox-maturation/idea.md) | Capture + projets BMAD + rotation 30 | agent, capture, rotation, BMAD | MATURATION, AGENTS-REGISTRY |
 | [IDAE-MACHINE-COEUR](idae-machine-coeur/idea.md) | Librairie schema-driven UI (v0.136.0, 186 tests) | core, data, UI, Svelte 5, IndexedDB, validation | QOOLIE, DELTA-SIMCA, MOTEUR-DASHBOARD, IDAE-IDBQL |
