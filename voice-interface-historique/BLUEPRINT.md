@@ -1,35 +1,94 @@
-# BLUEPRINT — VOICE INTERFACE HISTORIQUE
+# BLUEPRINT — VOICE-INTERFACE-HISTORIQUE
 
-**Statut :** À mettre à jour | **Date :** 2026-04-19 | **Version :** 1.0
+**Statut :** 🌱 Germination | **Date :** 2026-04-19 | **Version :** 1.0
 
 ---
 
 ## 🎯 Vision
-[Vision à compléter depuis idea.md]
+Interface de capture vocale pour maturation avec affichage inbox persistant — historique complet des entrées vocales, consultable en temps réel, non effacé.
 
 ---
 
 ## 📦 MVP
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- [ ] Bouton capture vocale (STT)
+- [ ] Panneau inbox latéral (historique complet)
+- [ ] Transcription en temps réel
+- [ ] Lien avec idées maturation (taguer, lier)
+- [ ] Recherche full-text historique
+- [ ] Sync avec app mobile OpenClaw
+
+**Stack :** Web Speech API | Svelte 5 | IndexedDB | @medyll/css-base
 
 ---
 
 ## 🔧 Core
-[Architecture à détailler]
+
+### Architecture
+```typescript
+interface VoiceEntry {
+  id: string;
+  timestamp: Date;
+  transcription: string;
+  audioBlob?: Blob;  // Optionnel
+  linkedIdeas?: string[];  // Codes des idées liées
+  tags?: string[];
+}
+
+class VoiceInbox {
+  async startRecording(): Promise<void>;
+  async stopRecording(): Promise<VoiceEntry>;
+  getHistory(): Promise<VoiceEntry[]>;
+  search(query: string): Promise<VoiceEntry[]>;
+  linkToIdea(entryId: string, ideaCode: string): Promise<void>;
+}
+```
+
+### UI Layout
+```
+┌─────────────────────────────────────┐
+│  Voice Inbox                   [🎤] │  ← Bouton capture
+├─────────────────────────────────────┤
+│  [Recherche ___________]           │
+├─────────────────────────────────────┤
+│  2026-04-05 14:30                   │
+│  "Idée pour app mobile grid..."     │
+│  Tags: mobile, UX                   │
+├─────────────────────────────────────┤
+│  2026-04-05 12:15                   │
+│  "Réflexion sur skill-memoire..."   │
+│  Tags: skill, mémoire               │
+└─────────────────────────────────────┘
+```
+
+### Web Speech API
+```typescript
+const recognition = new webkitSpeechRecognition();
+recognition.continuous = true;
+recognition.interimResults = true;
+
+recognition.onresult = (event) => {
+  const transcript = Array.from(event.results)
+    .map(result => result[0].transcript)
+    .join('');
+  
+  // Affichage en temps réel dans inbox
+  updateInbox(transcript);
+};
+```
 
 ---
 
 ## 📅 Roadmap
-1. **Semaine 1** : Setup + core
-2. **Semaine 2** : Features principales
-3. **Semaine 3** : Polish + tests
+1. **Semaine 1** : Capture vocale + transcription temps réel
+2. **Semaine 2** : Inbox UI + stockage IndexedDB
+3. **Semaine 3** : Lien avec maturation + recherche
 
 ---
 
 ## 🚀 Setup
-"[commandes setup]"
+```bash
+mkdir voice-interface-historique && cd voice-interface-historique
+npm install svelte @medyll/css-base idae-idbql
+```
 
-**Prochaine action :** [Action immédiate]
-
+**Prochaine action :** Implémenter reconnaissance vocale avec Web Speech API et affichage temps réel.
