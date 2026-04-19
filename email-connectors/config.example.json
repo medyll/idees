@@ -1,0 +1,50 @@
+{
+  "gmail-lebrun.meddy": {
+    "enabled": true,
+    "email": "lebrun.meddy@gmail.com",
+    "password": "",
+    "role": "pro",
+    "identity": "Meddy",
+    "imap": {
+      "host": "imap.gmail.com",
+      "port": 993,
+      "tls": true
+    }
+  },
+  "gmail-m.mydde": {
+    "enabled": true,
+    "email": "m.mydde@gmail.com",
+    "password": "",
+    "role": "creative",
+    "identity": "MYDDE",
+    "imap": {
+      "host": "imap.gmail.com",
+      "port": 993,
+      "tls": true
+    }
+  },
+  "live-mydde": {
+    "enabled": false,
+    "email": "mydde@live.fr",
+    "password": "",
+    "role": "pro",
+    "identity": "MYDDE",
+    "imap": {
+      "host": "outlook.office365.com",
+      "port": 993,
+      "tls": true
+    }
+  },
+  "proton": {
+    "enabled": false,
+    "email": "",
+    "password": "",
+    "role": "secure",
+    "identity": "",
+    "bridge": {
+      "host": "127.0.0.1",
+      "port": 1143,
+      "tls": false
+    }
+  }
+}
